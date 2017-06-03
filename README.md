@@ -26,6 +26,11 @@ Before you start, there's a few things that you will need to download and instal
 
 The version of Visual Studio you need will be dependent on your compatibility requirements. Make sure you download the C++ support and it can build 64-bit.
 
+## Download OpenCV
+Get the latest relase. This contains your source code.
+
+Link: http://opencv.org/releases.html
+
 # Generate Code with CMake
 1. Hit configure
 2.  Check the following:
@@ -33,27 +38,29 @@ The version of Visual Studio you need will be dependent on your compatibility re
   * WITH_CUBLAS
   * CUDA_FAST_MATH 
 
-   ONLY IF ACCURACY IS NOT CRITICAL (tradeoff: speed and accuracy)
+   If you do not care about absolute accuracy. The tradeoff here is accuracy for speed.
 
 * BUILD_opencv_world 
 
-   ONLY IF YOU DON"T PLAN TO DEPLOY...THIS IS ALL OF OPENCV IN ONE LIB/DLL...NOT LEAN
+   Select **only** if you don't plan to deploy this. This will build everything into one lib/dll. This is not lean at all.
 
 * INSTALL_TESTS 
 
-   LETS YOU VERIFY EVERYTHING WORKS 
+   Lets you verify everything works.
 
 3. Uncheck the BUILD_opencv_python2 flag if you don't plan on using python (otherwise you will need python with debug built on your machine)
 4. Hit configure again/until the red text highlights go away
 5. FINALLY: Hit Generate button to build C++ code
 
 # Build with Visual Studio
-1. MAKE SURE BUILDING 64 BIT
-2. Build debug AND release
+1. **MAKE SURE BUILDING 64 BIT**
+2. Build debug **and** release
 3. Build ALL_BUILD
 4. Build INSTALL
-5. Expect 2 hours to build each ALL_BUILD
-6. look for [build directory]/install/ for dlls, libs, test programs for debug and release
+
+  * Expect **2 hours** to build each ALL_BUILD. Change your power settings temporarily so your computer doesn't fall asleep during this.
+
+6. Look for [build directory]/install/ for dlls, libs, test programs for debug and release
 7. Review OpenCVConfig.cmake file to double check how things were configured
 
 # Test
@@ -66,7 +73,7 @@ The version of Visual Studio you need will be dependent on your compatibility re
 2. Add opencv\bin to your path (has all the dlls)
 
 # Setting Up Visual Studio Project
-This part will be very similar to what OpenCV's documentation has. Link to 2.4 documentation in the reference section below.
+This part will be very similar to what OpenCV's documentation has. Link to 2.4 documentation in the reference section below. I use the local method here, but you can use the global method if you wish.
 
 1. Build for 64 bit only
 2. Include debug and release libs that you require
@@ -74,8 +81,9 @@ This part will be very similar to what OpenCV's documentation has. Link to 2.4 d
 4. Edit project for Linker: include opencv lib
 5. Add additional libraries under Linker
 6. Repeat for release building
-7. May need to grab symbols from Microsoft for debugging (if it complains about pdb symbols not found)
-  * Tools->Options->Debugging->Symbols and select checkbox "Microsoft Symbol Servers"
+
+If Visual Studio complains about pdb symbols not being found, you may need to grab symbols from Microsoft for debugging:
+* Tools->Options->Debugging->Symbols and select checkbox "Microsoft Symbol Servers"
 
 ## Notes:
 Firewalls/proxys may make things tricky for you! Manually downloading dlls and other items may be required
