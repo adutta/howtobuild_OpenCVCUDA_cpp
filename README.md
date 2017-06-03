@@ -25,7 +25,7 @@ Before you start, there's a few things that you will need to download and instal
 
 The version of Visual Studio you need will be dependent on your compatibility requirements. Make sure you download the C++ support and it can build 64-bit.
 
-# GENERATE CODE WITH CMAKE
+# Generate Code with CMake
 1. Hit configure
 2.  Check the following:
 * WITH_CUDA
@@ -37,7 +37,7 @@ The version of Visual Studio you need will be dependent on your compatibility re
 4. Hit configure again/until the red text highlights go away
 5. FINALLY: Hit Generate button to build C++ code
 
-# BUILD WITH VISUAL STUDIO
+# Build with Visual Studio
 1. MAKE SURE BUILDING 64 BIT
 2. Build debug AND release
 3. Build ALL_BUILD
@@ -46,16 +46,16 @@ The version of Visual Studio you need will be dependent on your compatibility re
 6. look for [build directory]/install/ for dlls, libs, test programs for debug and release
 7. Review OpenCVConfig.cmake file to double check how things were configured
 
-# TEST
+# Test
 * Run a subset (or all if you really want to ) of the test executables to see if things built correctly
 * Have the lena.png and lena.jpg in the exe directory. Some tests will need these.
 * cvcore, cudarithm should be tested
 
-# MOVE WHERE YOU WANT
+# Move OpenCV Where You Want
 1. Move your new opencv to the place you want (C drive maybe?)
 2. Add opencv\bin to your path (has all the dlls)
 
-# SETTING UP VISUAL STUDIO CODE
+# Setting Up Visual Studio Project
 This part will be very similar to what OpenCV's documentation has. Link to 2.4 documentation in the reference section below.
 
 1. Build for 64 bit only
