@@ -65,7 +65,8 @@ Link: http://opencv.org/releases.html
 3. Build ALL_BUILD
 4. Build INSTALL
 
-  * Expect **2 hours** to build each ALL_BUILD. Change your power settings temporarily so your computer doesn't fall asleep during this.
+  * Expect **2 hours** to build each ALL_BUILD.
+  * Change your power settings temporarily so your computer doesn't fall asleep during this.
 
 6. Look for [build directory]/install/ for dlls, libs, test programs for debug and release
 7. Review OpenCVConfig.cmake file to double check how things were configured
@@ -82,7 +83,7 @@ Link: http://opencv.org/releases.html
 # Setting Up Visual Studio Project
 This part will be very similar to what OpenCV's documentation has. Link to 2.4 documentation in the reference section below. I use the local method here, but you can use the global method if you wish.
 
-1. Build for 64 bit only
+1. Build for 64 bit only. This is a requirement to use the GPU.
 2. Include debug and release libs that you require
 3. Edit project for C/C++: include additional libraries
 4. Edit project for Linker: include opencv lib
@@ -93,7 +94,8 @@ If Visual Studio complains about pdb symbols not being found, you may need to gr
 * Tools->Options->Debugging->Symbols and select checkbox "Microsoft Symbol Servers"
 
 ## Notes:
-Firewalls/proxys may make things tricky for you! Manually downloading dlls and other items may be required.
+* Firewalls/proxys may make things tricky for you! Manually downloading dlls and other items may be required.
+* Remember that to use the GPU, you must first download matricies to the GPU. Once you're finished, upload back to the CPU.
 
 # References/Thanks:
 * https://initialneil.wordpress.com/2014/09/25/opencv-2-4-9-cuda-6-5-visual-studio-2013/
