@@ -20,11 +20,14 @@ This guide is intended to help you quickly figure out what you need to do to bui
 Before you start, there's a few things that you will need to download and install for your machine:
   
   * CMake: https://cmake.org/
-  * Visual Studio for C++ (Community/Express will work): https://www.visualstudio.com/ ==> Make sure it's in your path
-  * CUDA Toolkit (latest you can get): https://developer.nvidia.com/cuda-toolkit
-  * CUDA Tools (maybe?...4.0 is the latest I can find): https://developer.nvidia.com/cuda-toolkit-40
+  * Visual Studio for C++ (Community/Express will work): https://www.visualstudio.com/ 
+  * CUDA Toolkit: https://developer.nvidia.com/cuda-toolkit
+  * CUDA Tools (Maybe? 4.0 is the latest I can find...): https://developer.nvidia.com/cuda-toolkit-40
 
-The version of Visual Studio you need will be dependent on your compatibility requirements. Make sure you download the C++ support and it can build 64-bit.
+### Visual Studio Notes
+* The version of Visual Studio you need will be dependent on your compatibility requirements.
+* Make sure you download the C++ support and it can build 64-bit. 
+* Make sure VS it's in your path as well.
 
 ## Download OpenCV
 Get the latest relase. This contains your source code.
@@ -34,6 +37,7 @@ Link: http://opencv.org/releases.html
 # Generate Code with CMake
 1. Hit configure
 2.  Check the following:
+ 
   * WITH_CUDA
   * WITH_CUBLAS
   * CUDA_FAST_MATH 
@@ -48,9 +52,12 @@ Link: http://opencv.org/releases.html
 
    Lets you verify everything works.
 
-3. Uncheck the BUILD_opencv_python2 flag if you don't plan on using python (otherwise you will need python with debug built on your machine)
+3. Uncheck the BUILD_opencv_python2 flag if you don't plan on using python
+
+  * Otherwise you will need Python with debug built on your machine
+
 4. Hit configure again/until the red text highlights go away
-5. FINALLY: Hit Generate button to build C++ code
+5. **Finally**: Hit Generate button to build C++ code
 
 # Build with Visual Studio
 1. **MAKE SURE BUILDING 64 BIT**
@@ -86,7 +93,7 @@ If Visual Studio complains about pdb symbols not being found, you may need to gr
 * Tools->Options->Debugging->Symbols and select checkbox "Microsoft Symbol Servers"
 
 ## Notes:
-Firewalls/proxys may make things tricky for you! Manually downloading dlls and other items may be required
+Firewalls/proxys may make things tricky for you! Manually downloading dlls and other items may be required.
 
 # References/Thanks:
 * https://initialneil.wordpress.com/2014/09/25/opencv-2-4-9-cuda-6-5-visual-studio-2013/
