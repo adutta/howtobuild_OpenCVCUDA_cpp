@@ -18,21 +18,31 @@ This guide is intended to help you quickly figure out what you need to do to bui
 
 ## Software
 Before you start, there's a few things that you will need to download and install for your machine:
-* CMake: https://cmake.org/
-* Visual Studio for C++ (Community/Express will work): https://www.visualstudio.com/ ==> Make sure it's in your path
-* CUDA Toolkit (latest you can get): https://developer.nvidia.com/cuda-toolkit
-* CUDA Tools (maybe?...4.0 is the latest I can find): https://developer.nvidia.com/cuda-toolkit-40
+  
+  * CMake: https://cmake.org/
+  * Visual Studio for C++ (Community/Express will work): https://www.visualstudio.com/ ==> Make sure it's in your path
+  * CUDA Toolkit (latest you can get): https://developer.nvidia.com/cuda-toolkit
+  * CUDA Tools (maybe?...4.0 is the latest I can find): https://developer.nvidia.com/cuda-toolkit-40
 
 The version of Visual Studio you need will be dependent on your compatibility requirements. Make sure you download the C++ support and it can build 64-bit.
 
 # Generate Code with CMake
 1. Hit configure
 2.  Check the following:
-* WITH_CUDA
-* WITH_CUBLAS
-* CUDA_FAST_MATH ===> ONLY IF ACCURACY IS NOT CRITICAL (tradeoff: speed and accuracy)
-* BUILD_opencv_world ====> ONLY IF YOU DON"T PLAN TO DEPLOY...THIS IS ALL OF OPENCV IN ONE LIB/DLL...NOT LEAN
-* INSTALL_TESTS ==> LETS YOU VERIFY EVERYTHING WORKS 
+  * WITH_CUDA
+  * WITH_CUBLAS
+  * CUDA_FAST_MATH 
+
+   ONLY IF ACCURACY IS NOT CRITICAL (tradeoff: speed and accuracy)
+
+* BUILD_opencv_world 
+
+   ONLY IF YOU DON"T PLAN TO DEPLOY...THIS IS ALL OF OPENCV IN ONE LIB/DLL...NOT LEAN
+
+* INSTALL_TESTS 
+
+   LETS YOU VERIFY EVERYTHING WORKS 
+
 3. Uncheck the BUILD_opencv_python2 flag if you don't plan on using python (otherwise you will need python with debug built on your machine)
 4. Hit configure again/until the red text highlights go away
 5. FINALLY: Hit Generate button to build C++ code
@@ -65,7 +75,7 @@ This part will be very similar to what OpenCV's documentation has. Link to 2.4 d
 5. Add additional libraries under Linker
 6. Repeat for release building
 7. May need to grab symbols from Microsoft for debugging (if it complains about pdb symbols not found)
-* Tools->Options->Debugging->Symbols and select checkbox "Microsoft Symbol Servers"
+  * Tools->Options->Debugging->Symbols and select checkbox "Microsoft Symbol Servers"
 
 ## Notes:
 Firewalls/proxys may make things tricky for you! Manually downloading dlls and other items may be required
