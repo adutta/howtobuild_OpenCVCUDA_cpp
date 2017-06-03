@@ -8,11 +8,11 @@ Good news: you can use those CUDA cores with OpenCV! Even the weakest GPUs can b
 Bad news: You can't download this. You will need to build OpenCV to work with your GPU. 
 Worse news: There's so many options that you might be overwhelmed by what to and not to do.
 
-This guide is intended to help you quickly figure out what you need to do to build OpenCV so it can leverage your CUDA cores.
+This guide is intended to help you quickly figure out what you need to do to build OpenCV so it can leverage your CUDA cores. This was created with a bit of trial and error.
 
 # Prerequisites:
 ## PC Requirements
-* 64-bit Windows
+* 64-bit Windows OS
 * An NVIDIA GPU with CUDA cores
 * ~5GB of space free on a single drive
 
@@ -35,31 +35,36 @@ Get the latest relase. This contains your source code.
 Link: http://opencv.org/releases.html
 
 # Generate Code with CMake
-1. Hit configure
-2.  Check the following:
+CMake is a GUI tool to configure OpenCV to your liking before it's built.
+
+1. Point CMake to where the source code is. Look for the directory with the CMakeLists.txt file in it.
+2. Hit configure
+3.  Check the following:
  
   * WITH_CUDA
   * WITH_CUBLAS
   * CUDA_FAST_MATH 
 
-   If you do not care about absolute accuracy. The tradeoff here is accuracy for speed.
+   Check **only** if you do not care about absolute accuracy. The tradeoff here is accuracy for speed.
 
-* BUILD_opencv_world 
+  * BUILD_opencv_world 
 
    Select **only** if you don't plan to deploy this. This will build everything into one lib/dll. This is not lean at all.
 
-* INSTALL_TESTS 
+  * INSTALL_TESTS 
 
    Lets you verify everything works.
 
-3. Uncheck the BUILD_opencv_python2 flag if you don't plan on using python
+4. Uncheck the BUILD_opencv_python2 flag if you don't plan on using python
 
   * Otherwise you will need Python with debug built on your machine
 
-4. Hit configure again/until the red text highlights go away
-5. **Finally**: Hit Generate button to build C++ code
+5. Hit configure again/until the red text highlights go away
+6. **Finally**: Hit Generate button to build C++ code
 
 # Build with Visual Studio
+The code has now been configured as you need it. Now we actually get to build OpenCV.
+
 1. **MAKE SURE BUILDING 64 BIT**
 2. Build debug **and** release
 3. Build ALL_BUILD
@@ -72,13 +77,13 @@ Link: http://opencv.org/releases.html
 7. Review OpenCVConfig.cmake file to double check how things were configured
 
 # Test
-* Run a subset (or all if you really want to ) of the test executables to see if things built correctly
+Run a subset (or all if you really want to ) of the test executables to see if things built correctly
 * Have the lena.png and lena.jpg in the exe directory. Some tests will need these.
 * cvcore, cudarithm should be tested
 
 # Move OpenCV Where You Want
-1. Move your new opencv to the place you want (C drive maybe?)
-2. Add opencv\bin to your path (has all the dlls)
+Move your new opencv to the place you want (C drive maybe?)
+* Add opencv\bin to your path (has all the dlls)
 
 # Setting Up Visual Studio Project
 This part will be very similar to what OpenCV's documentation has. Link to 2.4 documentation in the reference section below. I use the local method here, but you can use the global method if you wish.
