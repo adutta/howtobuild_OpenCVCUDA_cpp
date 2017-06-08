@@ -39,6 +39,9 @@ CMake is a GUI tool to configure OpenCV to your liking before it's built.
 
 1. Point CMake to where the source code is. Look for the directory with the CMakeLists.txt file in it.
 2. Hit configure
+
+![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/cmake1.PNG "Should see something like this after hitting configure.")
+
 3.  Check the following:
  
   * WITH_CUDA
@@ -58,6 +61,8 @@ CMake is a GUI tool to configure OpenCV to your liking before it's built.
 4. Uncheck the BUILD_opencv_python2 flag if you don't plan on using python
 
   * Otherwise you will need Python with debug built on your machine
+
+![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/cmake2.PNG "Check all that apply.")
 
 5. Hit configure again/until the red text highlights go away
 6. **Finally**: Hit Generate button to build C++ code
