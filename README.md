@@ -66,6 +66,9 @@ CMake is a GUI tool to configure OpenCV to your liking before it's built.
 The code has now been configured as you need it. Now we actually get to build OpenCV.
 
 1. **MAKE SURE BUILDING 64 BIT**
+
+![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/build_64.PNG "Building 64-bit is critical.")
+
 2. Build debug **and** release
 3. Build ALL_BUILD
 4. Build INSTALL
