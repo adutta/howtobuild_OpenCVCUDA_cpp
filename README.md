@@ -22,7 +22,7 @@ Before you start, there's a few things that you will need to download and instal
   * CMake: https://cmake.org/
   * Visual Studio for C++ (Community/Express will work): https://www.visualstudio.com/ 
   * CUDA Toolkit: https://developer.nvidia.com/cuda-toolkit
-  * CUDA Tools (Maybe? 4.0 is the latest I can find...): https://developer.nvidia.com/cuda-toolkit-40
+  * CUDA Tools SDK (Maybe? 4.0 is the latest I can find...): https://developer.nvidia.com/cuda-toolkit-40
 
 ### Visual Studio Notes
 * The version of Visual Studio you need will be dependent on your compatibility requirements.
