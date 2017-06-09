@@ -89,21 +89,25 @@ The code has now been configured as you need it. Now we actually get to build Op
 7. Review OpenCVConfig.cmake file to double check how things were configured
 
 # Test
-Run a subset (or all if you really want to ) of the test executables to see if things built correctly
-* Have the lena.png and lena.jpg in the exe directory. Some tests will need these.
-* cvcore, cudarithm should be tested
+Run a subset (or all if you really want to ) of the test executables with Command Prompt/PowerShell to see if things built correctly
+* Have the lena.png and lena.jpg in the exe directory. Some tests will need these. They can be found in the original OpenCV source directory.
+* At a minimum, "opencv_test_core.exe" should be tested 
 
 # Move OpenCV Where You Want
 Move your new opencv to the place you want (C drive maybe?)
-* Add opencv\bin to your path (has all the dlls)
+* What you want will be in the "../install" directory. Once you move it, rename it something like "../opencv"
+* Add "../opencv/bin" to your path (has all the dlls)
 
 # Setting Up Visual Studio Project
 This part will be very similar to what OpenCV's documentation has. Link to 2.4 documentation in the reference section below. I use the local method here, but you can use the global method if you wish.
 
 1. Build for 64 bit only. This is a requirement to use the GPU.
-2. Include debug and release libs that you require
-3. Edit project for C/C++: include additional libraries
-4. Edit project for Linker: include opencv lib
+
+![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/build_64.PNG "Familiar?")
+
+2. Include Debug and Release libs that you require
+3. Edit Project for C/C++: include additional libraries
+4. Edit Project for Linker: include opencv lib
 5. Add additional libraries under Linker
 6. Repeat for release building
 
