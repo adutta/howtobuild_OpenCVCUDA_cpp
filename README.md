@@ -78,8 +78,7 @@ The code has now been configured as you need it. Now we actually get to build Op
 3. Build ALL_BUILD
 4. Build INSTALL
 
-![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/vs_build1.png "Where to find these.")
-![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/vs_build2.png "Right click to build.")
+![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/vs_build1.png "Where to find these.")![alt text](https://github.com/adutta/howtobuild_OpenCVCUDA_cpp/blob/master/vs_build2.png "Right click to build.")
 
   * Expect **2 hours** to build each ALL_BUILD.
   * Change your power settings temporarily so your computer doesn't fall asleep during this.
